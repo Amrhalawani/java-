@@ -1,0 +1,39 @@
+https://www.youtube.com/watch?v=sUTcDA8bVrg&index=7&list=PLCIJjtzQPZJ_w5vJtcp4NTAPLNOYKpOa6
+07-Object Oriented with Java (Lecture 7) By Eng-Helal Ahmed | Arabic 
+
+معلومه افتكرتها من الدرس اللي قبليه اللي هو بتاع التوريث انك لو جيت عملت اكستيند من كلاس لكلاس تاني والكلاس الاب كان فيه 
+كونستراكتور فهو بالتالي هيبقي معمله كونستراكتور برضوا مينفعش تسيبه فاضي 
+
+// static : 
+
+** static variable : بيبقي عباره عن زي شيرد فاريابل لكل الكلاسات as global variable 
+وممكن استخدمه من اي كلاس تاني ... بس مش هينفع اجمعه او اعمل اي عمليات حسابيه مع فاريبال عادي لازم يكون ستاتيك برضوا 
+
+** static method : كذالك هنا لازم عشان استخدم ميسود ستاتيك .. استخدمها في ميسود استاتيك زيها 
+علي سبيل المثال انا هستفاد ايه من الميسود دي اني ممكن اناديها بسهوله في اي كلاس تانيه ستاتيك زي المين كلاس كدا واني اناديها بسرعه 
+من غير ما اعمل اوبجيكت وبعدين استخدمه .. زي كدا 
+A.add();
+A is a class and add is a method in class A.
+
+مثال 
+
+الكلاسين دول هيعملوا زي اللوج ان والبرنامج بيحسب كل مستخدم جديد برقم جديد ويطبعه 
+الاستاتيك فاريبول هو الميمبر ولو عملته منغير ستاتيك يعني شيرد , مش هيجمع كل مره واحد وهيكتب كل مره 1 بس مش هيزود .. لكون لو شيرد
+فهو هيتشاف من جميع الكلاسات وهيزيد عادي 
+public class visitor {
+    private  String firstName;
+    private String LastName;
+    static int member = 0; //static ya3ne shared variable ma ben kol el classes
+    public visitor (String fn, String ln){ //كونستراكتور 
+        firstName = fn; LastName = ln;
+        member++; //increament
+        System.out.println("thank you "+ firstName + " " + LastName + ", you are Member number "+ member );  }
+    
+class2:
+    public static void main(String[] args) {
+        
+     visitor v1= new visitor("ahmed","mohamed"); 
+     visitor v2= new visitor("Amr","mohamed"); 
+     visitor v3= new visitor("ahmed","said"); 
+     visitor v4= new visitor("yasmeen","mohamed"); 
+     visitor v5= new visitor("asmaa","ramy"); 
